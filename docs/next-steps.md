@@ -31,7 +31,7 @@ The Guide currently reports a secure, locked user build and `QCS EMMC`. The crit
 
 Entering EDL and only checking USB enumeration is a probe. Sending a programmer or Firehose commands is a separate risk. Do not erase or write GPT, bootloader, `persist`, modem, Bluetooth, or calibration partitions without a verified device-specific recovery package and a backup plan.
 
-No EDL entry, programmer transfer, erase, or flash was performed during this investigation.
+No EDL entry was observed. `fastboot reboot edl` was rejected by the host client, and `fastboot oem edl` was rejected by the bootloader as an unknown command. No programmer transfer, erase, or flash was performed during this investigation.
 
 ## Avoid these assumptions
 

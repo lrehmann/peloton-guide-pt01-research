@@ -104,7 +104,7 @@ fastboot flashing unlock
 # Reboots the device; does not itself flash data.
 fastboot reboot recovery
 
-# Potentially enters Qualcomm EDL; no EDL test was performed in this report.
+# Potentially enters Qualcomm EDL; this device rejected both software probes documented in findings.md.
 fastboot reboot edl
 ~~~
 

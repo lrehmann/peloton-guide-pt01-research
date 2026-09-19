@@ -17,7 +17,7 @@ The strongest confirmed access path is the bootloader:
 | Fastboot unlock | Refused: `unlock is not allowed for user build` |
 | Fastboot partition fetch | Not supported by this bootloader |
 | Stock recovery ADB | Not observed; `fastboot reboot recovery` fell through to normal Android boot |
-| Qualcomm EDL | Not attempted in this report |
+| Qualcomm EDL | Not reached; both software probes were rejected |
 | Generic Bluetooth HID remote | No Guide connection observed |
 
 The bootloader reported `secure: yes`, `unlocked: no`, `get_unlock_ability: 0`, `variant: QCS EMMC`, and A/B slots. No partition was erased or flashed. The failed unlock request did **not** wipe the device.

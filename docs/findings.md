@@ -111,7 +111,24 @@ fastboot: error: Unable to get max-fetch-size. Device does not support fetch com
 
 No image was retrieved or written.
 
-## 6. Screen state
+## 6. Qualcomm EDL probe
+
+Two non-writing software entry attempts were made while the verified Guide was in fastboot:
+
+```text
+$ fastboot reboot edl
+fastboot: usage: unknown reboot target edl
+
+$ fastboot oem edl
+FAILED (remote: 'unknown command')
+fastboot: error: Command failed
+```
+
+The first command was rejected by the host fastboot client before transmission. The second reached the bootloader and was rejected by the device. After both tests, the Guide remained in fastboot, no Qualcomm `9008`/QDLoader markers appeared in macOS USB enumeration, and `adb devices -l` remained empty.
+
+No EDL loader, Sahara handshake, Firehose command, partition read, partition write, erase, or flash was attempted.
+
+## 7. Screen state
 
 The Guide displayed two separate states in the supplied photograph:
 
@@ -128,7 +145,7 @@ This is a remote-reconnect overlay plus an offline-network message. It is not ev
 
 The manual's stated remote sequence is an instruction for a compatible Peloton remote; it was not treated as proof that a generic keyboard/HID emulator would work.
 
-## 7. Bluetooth experiments
+## 8. Bluetooth experiments
 
 The Mac had Bluetooth enabled. A nearby device named `PLTN-TCAV1` was seen by a local Bluetooth inquiry, but its identity was not proven and it was not paired.
 
@@ -138,12 +155,12 @@ The emulator's Classic mode was also selected. Its pairing dialog did not show t
 
 No exact Peloton RE01 GATT/advertising protocol was recovered. A standard HID profile is therefore not enough evidence to emulate the original remote.
 
-## 8. What was not done
+## 9. What was not done
 
 - No partition was erased.
 - No partition was flashed.
 - No bootloader unlock succeeded.
-- No EDL transition was attempted.
+- No EDL transition was observed; the two software probes were rejected.
 - No custom boot image was supplied or booted.
 - No factory reset was intentionally initiated.
 - No microphone, camera, or user audio was recorded.
