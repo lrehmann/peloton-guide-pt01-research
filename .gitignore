@@ -1,0 +1,14 @@
+.DS_Store
+
+# Local captures and extracted firmware should stay out of the public repo.
+captures/
+firmware/
+*.img
+*.bin
+*.elf
+*.mbn
+*.xml
+
+# Local experiment output.
+*.log
+*.pcap
