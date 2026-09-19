@@ -18,6 +18,7 @@ The strongest confirmed access path is the bootloader:
 | Fastboot partition fetch | Not supported by this bootloader |
 | Stock recovery ADB | Not observed; `fastboot reboot recovery` fell through to normal Android boot |
 | Qualcomm EDL | Not reached; both software probes were rejected |
+| Exact PT01/`tiger` firmware package | Not located in the bounded local/public search |
 | Generic Bluetooth HID remote | No Guide connection observed |
 
 The bootloader reported `secure: yes`, `unlocked: no`, `get_unlock_ability: 0`, `variant: QCS EMMC`, and A/B slots. No partition was erased or flashed. The failed unlock request did **not** wipe the device.

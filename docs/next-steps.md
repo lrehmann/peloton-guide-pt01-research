@@ -1,11 +1,21 @@
 # What to try next
 
+## Completed in the current pass
+
+1. Repeated the fastboot trigger and collected a fresh, redacted read-only
+   inventory. The device remains `product: tiger`, `variant: QCS EMMC`,
+   `secure: yes`, `unlocked: no`, on slot `a` of two.
+2. Searched local files, this repository, public GitHub results, and public web
+   sources for an exact PT01/`tiger` firmware image, OTA package, signed
+   programmer, or Firehose loader. None was located. See
+   [firmware-hunt.md](firmware-hunt.md).
+
 ## Lowest-risk next steps
 
-1. Repeat the fastboot trigger and collect a fresh, redacted `getvar all` transcript.
-2. Capture the exact Guide screen shown after `fastboot reboot recovery`; document whether it says “No command,” shows a recovery menu, or simply boots Android.
-3. Test the physical camera privacy slider and microphone switch independently, with the USB monitor running, to narrow the actual boot-mode trigger.
-4. Obtain a known-good Peloton Guide/RE01 remote or a BLE capture from one. That is the most direct way to learn the expected pairing and report protocol.
+1. Capture the exact Guide screen shown after `fastboot reboot recovery`; document whether it says “No command,” shows a recovery menu, or simply boots Android.
+2. Test the physical camera privacy slider and microphone switch independently, with the USB monitor running, to narrow the actual boot-mode trigger.
+3. Obtain a known-good Peloton Guide/RE01 remote or a BLE capture from one. That is the most direct way to learn the expected pairing and report protocol.
+4. If firmware recovery is still the goal, capture update traffic from a working Guide or obtain a matching PT01 package from another unit before considering any programmer or Firehose work.
 
 ## EDL: what it would and would not provide
 

@@ -71,6 +71,11 @@ kernel: uefi
 max-download-size: 805306368
 ~~~
 
+A fresh read-only pass on 2026-09-18 re-confirmed the fastboot target and the
+same key values. The target serial was used locally to avoid addressing the
+wrong device, but is redacted from this report. No write, erase, unlock, or
+flash command was issued during this pass.
+
 The partition table exposed A/B `boot`, `system`, `vendor`, `vbmeta`, `dtbo`, `abl`, Qualcomm firmware, and other partitions. The boot and vendor/system partitions are large enough that blind flashing would be especially risky.
 
 ## 5. Unlock and recovery tests
@@ -164,3 +169,26 @@ No exact Peloton RE01 GATT/advertising protocol was recovered. A standard HID pr
 - No custom boot image was supplied or booted.
 - No factory reset was intentionally initiated.
 - No microphone, camera, or user audio was recorded.
+
+## 10. Firmware and programmer hunt
+
+A second-pass search was performed on 2026-09-18. It covered the local
+Downloads directory, this repository, public GitHub repository and code search,
+and public web results for PT01, `tiger`, Peloton Guide firmware/OTA packages,
+Qualcomm Firehose programmers, and the observed identifiers.
+
+No exact PT01/`tiger` firmware image, OTA package, signed programmer, or
+Firehose loader was located. This is a bounded negative result, not proof that
+Peloton has never distributed one privately or through an update session.
+
+The [FCC PT01 filing](https://fccid.io/2AA3N-PT01) is useful for hardware identity
+and regulatory/internal-photo references, but did not provide a firmware
+package. The community [OpenPelo project](https://github.com/doudar/Openpelo)
+provides Android/ADB, wireless-debugging, and app-management guidance for
+devices where debugging can already be enabled; it is not an exact PT01
+firmware or recovery bundle, and its source did not contain a `tiger`, PT01,
+Firehose, or matching firmware package.
+
+Nothing was downloaded, executed as a device programmer, or flashed as part of
+this search. The most promising firmware sources remain an OTA capture from a
+working Guide or a package obtained from another matching PT01 unit.
