@@ -18,8 +18,8 @@ The open-source [darwin-bt-remote](https://github.com/jqssun/darwin-bt-remote) p
 
 Observed setup:
 
-- App: \`BTRemote.app\`
-- Advertised name: \`BTRemote\`
+- App: `BTRemote.app`
+- Advertised name: `BTRemote`
 - Low Energy mode: advertising started
 - Generic controls: Up, Down, Left, Right, Enter, keyboard keys, and consumer controls
 - One generic Up action was sent

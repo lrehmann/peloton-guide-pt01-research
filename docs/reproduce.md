@@ -9,8 +9,8 @@ The original investigation used:
 - macOS 26.3, build 25D125
 - Apple Silicon / arm64
 - Android platform-tools 37.0.1-15733141
-- \`adb\` at \`/opt/homebrew/bin/adb\`
-- \`fastboot\` from the same platform-tools installation
+- `adb` at `/opt/homebrew/bin/adb`
+- `fastboot` from the same platform-tools installation
 
 ## Normal USB and ADB check
 
@@ -31,7 +31,7 @@ adb devices -l
 List of devices attached
 ~~~
 
-Do not interpret an empty ADB list as a cable failure if macOS still sees the \`tiger\` USB device.
+Do not interpret an empty ADB list as a cable failure if macOS still sees the `tiger` USB device.
 
 ## Continuous state monitor
 
@@ -75,7 +75,7 @@ The exact physical sequence is not confirmed. The observed lead was:
 fastboot devices -l
 ~~~
 
-The original unit then exposed a \`tiger\` fastboot device.
+The original unit then exposed a `tiger` fastboot device.
 
 ## Read-only fastboot collection
 
